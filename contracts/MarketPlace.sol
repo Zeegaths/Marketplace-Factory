@@ -40,13 +40,14 @@ contract MarketPlace {
          newItem.name = _name;
          newItem.price = _price;
 
-//push ne item to the array
+//push the item to the array
          itemsArray.push(newItem);
 
          itemCount = itemCount + 1;
 
     }
 
+//buy a listed item
     function purchaseItem(uint256 _itemId) external payable {
         require(msg.sender != address(0), "Zero address");
         require(_itemId <= itemCount, "invalid item");
